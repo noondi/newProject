@@ -1,0 +1,53 @@
+@Html.Partial("NavBar")
+@model newProject.Models.Activity 
+
+<h1>Create a new Activity</h1>
+<form asp-action="CreateActivity" method="post">
+    <div class="form-group row">
+        <label asp-for="Title" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Title" class="form-control">
+        </div>
+        <div class="col-sm-3"><span class="rederror" asp-validation-for="Title"></span></div>
+    </div>
+
+    <!-- <div class="form-group row">
+        <label asp-for="Time" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Time" class="form-control">
+        </div>
+        <div class="col-sm-3"><span class="rederror" asp-validation-for="Time"></span></div>
+    </div> -->
+
+    <div class="form-group row">
+        <label asp-for="ActivityDate" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="ActivityDate" class="form-control">
+        </div>
+        <div class="col-sm-3"><span class="rederror" asp-validation-for="ActivityDate"></span></div>
+    </div>
+
+
+     <div class="form-group row">
+        <label asp-for="Duration" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Duration" class="form-control">
+        </div>
+        <div class="col-sm-3"><span class="rederror" asp-validation-for="Duration"></span></div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group row">
+        <label asp-for="Description" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Description" class="form-control">
+        </div>
+        <div class="col-sm-3"><span class="rederror" asp-validation-for="Description"></span></div>
+    </div>   
+    <input type="submit" value="Create" class="btn btn-success">
+</form>

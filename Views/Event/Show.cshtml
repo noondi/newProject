@@ -1,0 +1,10 @@
+@Html.Partial("NavBar")
+<h1>@ViewBag.activity.Title</h1>
+<h4>Event Coordinator: </h4>
+<h4>Description: @ViewBag.activity.Description</h4>
+<h4>Duration: @ViewBag.activity.Duration</h4>
+<h4>Activity Date: @ViewBag.activity.ActivityDate.ToString("MMMM d, yyyy")</h4>
+<h1>Participants:</h1>
+@foreach (var a in ViewBag.activity.Participants)
+{<p>@a.User.FirstName </p>}
+

@@ -1,0 +1,40 @@
+@Html.Partial("NavBar")
+
+<h1>Dojo Activity Center.</h1>
+<h4>Welcome @ViewBag.username </h4>
+
+<table class="table table-striped">
+    <tr>
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Number of participants</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var a in ViewBag.activities)
+{
+    <tr>
+        <td><a href="show/@a.ActivityId">@a.Title </a></td>
+        <td>@a.ActivityDate.ToString("MMM d, yyyy")</td>
+        <td>@a.Duration</td>
+        <td> -------- </td>
+        <td>@a.Participants.Count</td>
+        <td>@if (@a.UserId == @ViewBag.userid) {
+            <a href="delete/@a.ActivityId">delete</a>
+            }
+            else if (@ViewBag.attending.Contains(@a.ActivityId)) {
+                <a href="leave/@a.ActivityId">Leave</a>
+            }
+            else {
+                <a href="join/@a.ActivityId">Join</a>
+            }
+
+        </td>
+    </tr>
+}
+
+</table>
+<br><br>
+<a href="add" class="btn btn-primary pull-right">Add new activity</a>
